@@ -11,6 +11,14 @@ ll_create(unsigned int data_size)
     /* TODO */
 }
 
+/**
+ * @brief Create a node object. Alloc memory for the struct and data_size bytes
+ * for the data itself. DO NOT FORGET ABOUT DIE!
+ *
+ * @param new_data      pointer to the data to be copied into the node
+ * @param data_size     the number of bytes to be copied
+ * @return ll_node_t*   the newly created node
+ */
 static ll_node_t *create_node(const void* new_data, unsigned int data_size)
 {
     ll_node_t *node;
@@ -24,6 +32,14 @@ static ll_node_t *create_node(const void* new_data, unsigned int data_size)
     */
 }
 
+/**
+ * @brief Get the nth node from the list. If n is larger than list->size - 1,
+ * clamp it down to list->size - 1.
+ * 
+ * @param n             the position to return
+ * @param list          the list
+ * @return ll_node_t*   the nth node from the list
+ */
 static ll_node_t *get_nth_node(unsigned int n, linked_list_t *list)
 {
     ll_node_t *node = list->head;
